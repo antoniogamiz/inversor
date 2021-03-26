@@ -20,6 +20,6 @@ jobs:
             mkdir -p prod
             cd prod
             git clone https://github.com/antoniogamiz/inversor.git .
-            nohup deno run --allow-net server.ts > ../my.log 2>&1 &
+            nohup deno run --allow-net --allow-env server.ts > ../my.log 2>&1 &
             echo $! > ../save_pid.txt
             echo "Deployment successful!"

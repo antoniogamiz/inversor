@@ -16,6 +16,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           script: |
             kill -9 `cat save_pid.txt`
+            rm -rf prod
             mkdir -p prod
             cd prod
             git clone https://github.com/antoniogamiz/inversor.git .

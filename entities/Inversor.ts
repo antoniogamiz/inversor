@@ -1,15 +1,10 @@
-export interface SolarModule {
+export default interface Inversor {
   brand: string;
   model: string;
   description: string;
   ratedPower: string;
-  voc: bigint;
-  isc: bigint;
-  vmp: bigint;
-  imp: bigint;
+  currentType: string;
   efficiency: number;
-  cvoc: bigint;
-  cisc: bigint;
   provider: string;
   discount: number;
   pvp: number;

@@ -1,4 +1,4 @@
-export default interface Inversor {
+export interface Inversor {
   brand: string;
   model: string;
   description: string;

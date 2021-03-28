@@ -1,0 +1,19 @@
+allow:
+  - net
+  - env
+
+scripts:
+  dev:
+    desc: Runs the server
+    cmd: server.ts
+    imap: import_map.json
+    watch: true
+    unstable: true
+    end:
+      PORT: 8000
+  prod:
+    cmd: server.ts
+    unstable: true
+    imap: import_map.json
+    env:
+      PORT: 80

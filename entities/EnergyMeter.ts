@@ -1,4 +1,4 @@
-export default interface EnergyMeter {
+export interface EnergyMeter {
   brand: string;
   model: string;
   description: string;

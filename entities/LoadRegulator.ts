@@ -1,4 +1,4 @@
-export default interface LoadRegulator {
+export interface LoadRegulator {
   brand: string;
   model: string;
   description: string;

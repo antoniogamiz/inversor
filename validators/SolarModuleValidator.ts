@@ -8,17 +8,22 @@ import {
   InputData,
 } from "validasaur/mod.ts";
 
-import { IInversorValidator } from "interfaces/validators/mod.ts";
+import { ISolarModuleValidator } from "interfaces/validators/mod.ts";
 
-export class InversorValidator implements IInversorValidator {
+export class SolarModuleValidator implements ISolarModuleValidator {
   async validate(entity: unknown) {
     const [passes, errors] = await validate(entity as InputData, {
       brand: [required, isString, lengthBetween(0, 20)],
       model: [required, isString, lengthBetween(0, 50)],
       description: [required, isString, lengthBetween(0, 500)],
-      ratedPower: [required, isNumber],
-      currentType: [required, isString, lengthBetween(0, 20)],
+      voc: [required, isNumber],
+      isc: [required, isNumber],
+      vmp: [required, isNumber],
+      imp: [required, isNumber],
       efficiency: [required, isNumber],
+      cp: [required, isNumber],
+      cvoc: [required, isNumber],
+      cisc: [required, isNumber],
       provider: [required, isString, lengthBetween(0, 50)],
       discount: [required, isNumber, numberBetween(0, 1)],
       pvp: [required, isNumber],

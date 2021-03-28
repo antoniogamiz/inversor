@@ -1,9 +1,8 @@
-export default interface SolarStructure {
-  // there's two attributes missing
+export interface SolarStructure {
   brand: string;
   model: string;
   description: string;
-  numberOfModules: number;
+  numberOfModules: bigint;
   installationSurface: string;
   weight: number;
   unionKit: string;

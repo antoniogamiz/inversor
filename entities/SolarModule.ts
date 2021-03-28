@@ -1,15 +1,16 @@
-export default interface SolarModule {
+export interface SolarModule {
   brand: string;
   model: string;
   description: string;
-  ratedPower: string;
-  voc: bigint;
-  isc: bigint;
-  vmp: bigint;
-  imp: bigint;
+  ratedPower: number;
+  voc: number;
+  isc: number;
+  vmp: number;
+  imp: number;
   efficiency: number;
-  cvoc: bigint;
-  cisc: bigint;
+  cp: number;
+  cvoc: number;
+  cisc: number;
   provider: string;
   discount: number;
   pvp: number;

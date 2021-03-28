@@ -1,10 +1,10 @@
 import { assertEquals } from "testing/asserts.ts";
-import { InversorValidator } from "validators/mod.ts";
+import { SolarStructureValidator } from "validators/mod.ts";
 
-Deno.test("InversorValidator", async () => {
-  const inversorValidator = new InversorValidator();
+Deno.test("SolarStructureValidator", async () => {
+  const solarStructureValidator = new SolarStructureValidator();
 
-  const result = await inversorValidator.validate({});
+  const result = await solarStructureValidator.validate({});
 
   const EXPECTED_NUMBER_OF_ERRORS_PLUS_STATUS = 11;
   assertEquals(result.passes, false);

@@ -1,0 +1,9 @@
+{
+    "imports": {
+        "interfaces/": "./interfaces/",
+        "validators/": "./validators/",
+        "entities/": "./entities/",
+        "testing/": "https://deno.land/std@0.91.0/testing/",
+        "validasaur/": "https://deno.land/x/validasaur/"
+    }
+}

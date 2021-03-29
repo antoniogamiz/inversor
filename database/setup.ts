@@ -1,5 +1,11 @@
 import { PostgresConnector, Database } from "denodb/mod.ts";
-import { InversorModel } from "./mod.ts";
+import {
+  InversorModel,
+  EnergyMeterModel,
+  LoadRegulatorModel,
+  SolarModuleModel,
+  SolarStructureModel,
+} from "./mod.ts";
 
 export const setupDataBase = async () => {
   const connection = new PostgresConnector({
@@ -12,7 +18,14 @@ export const setupDataBase = async () => {
 
   const db = new Database(connection);
 
-  db.link([InversorModel]);
+  db.link([
+    EnergyMeterModel,
+    InversorModel,
+    EnergyMeterModel,
+    LoadRegulatorModel,
+    SolarModuleModel,
+    SolarStructureModel,
+  ]);
   await db.sync();
 
   return db;

@@ -1,4 +1,7 @@
+import * as log from "https://deno.land/std@0.91.0/log/mod.ts";
+
 import { PostgresConnector, Database } from "denodb/mod.ts";
+
 import {
   InversorModel,
   EnergyMeterModel,
@@ -18,6 +21,13 @@ export const setupDataBase = async () => {
 
   const db = new Database(connection);
 
+  linkModels(db);
+  await syncDataBase(db);
+
+  return db;
+};
+
+const linkModels = (db: Database) => {
   db.link([
     EnergyMeterModel,
     InversorModel,
@@ -26,7 +36,12 @@ export const setupDataBase = async () => {
     SolarModuleModel,
     SolarStructureModel,
   ]);
-  await db.sync();
+};
 
-  return db;
+const syncDataBase = async (db: Database) => {
+  try {
+    await db.sync();
+  } catch (error) {
+    log.warning(error.message);
+  }
 };

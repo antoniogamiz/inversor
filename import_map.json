@@ -3,7 +3,9 @@
         "interfaces/": "./interfaces/",
         "validators/": "./validators/",
         "entities/": "./entities/",
+        "database/": "./database/",
         "testing/": "https://deno.land/std@0.91.0/testing/",
-        "validasaur/": "https://deno.land/x/validasaur/"
+        "validasaur/": "https://deno.land/x/validasaur/",
+        "denodb/": "https://raw.githubusercontent.com/takxlz/denodb/master/"
     }
 }

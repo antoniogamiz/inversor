@@ -3,3 +3,4 @@ export * from "./InversorValidator.ts";
 export * from "./LoadRegulatorValidator.ts";
 export * from "./SolarModuleValidator.ts";
 export * from "./SolarStructureValidator.ts";
+export * from "./types.ts";

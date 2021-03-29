@@ -7,6 +7,7 @@ import {
   lengthBetween,
   InputData,
 } from "validasaur/mod.ts";
+import { ValidationResult } from "validators/mod.ts";
 
 import { IInversorValidator } from "interfaces/validators/mod.ts";
 
@@ -24,6 +25,6 @@ export class InversorValidator implements IInversorValidator {
       pvp: [required, isNumber],
       price: [required, isNumber],
     });
-    return { passes, ...errors };
+    return ({ passes, errors } as unknown) as ValidationResult;
   }
 }

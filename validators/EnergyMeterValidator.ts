@@ -7,9 +7,9 @@ import {
   lengthBetween,
   InputData,
 } from "validasaur/mod.ts";
+import { ValidationResult } from "validators/mod.ts";
 
 import { IEnergyMeterValidator } from "interfaces/validators/mod.ts";
-
 export class EnergyMeterValidator implements IEnergyMeterValidator {
   async validate(entity: unknown) {
     const [passes, errors] = await validate(entity as InputData, {
@@ -21,6 +21,6 @@ export class EnergyMeterValidator implements IEnergyMeterValidator {
       pvp: [required, isNumber],
       price: [required, isNumber],
     });
-    return { passes, ...errors };
+    return ({ passes, errors } as unknown) as ValidationResult;
   }
 }

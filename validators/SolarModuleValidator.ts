@@ -7,6 +7,7 @@ import {
   lengthBetween,
   InputData,
 } from "validasaur/mod.ts";
+import { ValidationResult } from "validators/mod.ts";
 
 import { ISolarModuleValidator } from "interfaces/validators/mod.ts";
 
@@ -29,6 +30,6 @@ export class SolarModuleValidator implements ISolarModuleValidator {
       pvp: [required, isNumber],
       price: [required, isNumber],
     });
-    return { passes, ...errors };
+    return ({ passes, errors } as unknown) as ValidationResult;
   }
 }

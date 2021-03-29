@@ -7,6 +7,7 @@ import {
   lengthBetween,
   InputData,
 } from "validasaur/mod.ts";
+import { ValidationResult } from "validators/mod.ts";
 
 import { ILoadRegulatorValidator } from "interfaces/validators/mod.ts";
 
@@ -28,6 +29,6 @@ export class LoadRegulatorValidator implements ILoadRegulatorValidator {
       pvp: [required, isNumber],
       price: [required, isNumber],
     });
-    return { passes, ...errors };
+    return ({ passes, errors } as unknown) as ValidationResult;
   }
 }

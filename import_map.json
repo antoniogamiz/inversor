@@ -4,6 +4,7 @@
         "validators/": "./validators/",
         "entities/": "./entities/",
         "database/": "./database/",
+        "repositories/": "./repositories/",
         "errors/": "./errors/",
         "testing/": "https://deno.land/std@0.91.0/testing/",
         "validasaur/": "https://deno.land/x/validasaur/",

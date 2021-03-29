@@ -3,6 +3,6 @@ export class ValidationError extends Error {
   name = "ValidationError";
   constructor(errors: ErrorDescriptor[]) {
     super();
-    this.message = `Validation error: ${errors}`;
+    this.message = `Validation error: ${JSON.stringify(errors)}`;
   }
 }

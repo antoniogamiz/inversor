@@ -11,6 +11,4 @@ app.use((ctx) => {
   ctx.response.body = "Hello World!";
 });
 
-console.log(PORT);
-
 await app.listen({ port: PORT });

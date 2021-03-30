@@ -1,5 +1,3 @@
-import { ValidationResult } from "validators/mod.ts";
+import { Validator } from "validators/Validator.ts";
 
-export interface ILoadRegulatorValidator {
-  validate(entity: unknown): Promise<ValidationResult>;
-}
+export class ILoadRegulatorValidator extends Validator {}

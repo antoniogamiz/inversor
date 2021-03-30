@@ -1,5 +1,3 @@
-import { ValidationResult } from "validators/mod.ts";
+import { Validator } from "validators/Validator.ts";
 
-export interface ISolarModuleValidator {
-  validate(entity: unknown): Promise<ValidationResult>;
-}
+export class ISolarModuleValidator extends Validator {}

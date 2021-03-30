@@ -1,4 +1,3 @@
-import { ValidationResult } from "validators/mod.ts";
-export interface IEnergyMeterValidator {
-  validate(entity: unknown): Promise<ValidationResult>;
-}
+import { Validator } from "validators/Validator.ts";
+
+export class IEnergyMeterValidator extends Validator {}

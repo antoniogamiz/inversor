@@ -6,7 +6,7 @@ Deno.test("LoadRegulatorValidator", async () => {
 
   const result = await loadRegulatorValidator.validate({});
 
-  const EXPECTED_NUMBER_OF_ERRORS = 14;
+  const EXPECTED_NUMBER_OF_ERRORS = 15;
   assertEquals(result.passes, false);
   assertEquals(Object.keys(result.errors).length, EXPECTED_NUMBER_OF_ERRORS);
 });

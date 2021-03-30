@@ -1,4 +1,5 @@
 export interface Inversor {
+  id: bigint;
   brand: string;
   model: string;
   description: string;

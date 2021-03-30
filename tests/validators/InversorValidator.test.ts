@@ -6,7 +6,7 @@ Deno.test("InversorValidator", async () => {
 
   const result = await inversorValidator.validate({});
 
-  const EXPECTED_NUMBER_OF_ERRORS = 10;
+  const EXPECTED_NUMBER_OF_ERRORS = 11;
   assertEquals(result.passes, false);
   assertEquals(Object.keys(result.errors).length, EXPECTED_NUMBER_OF_ERRORS);
 });

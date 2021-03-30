@@ -6,7 +6,7 @@ Deno.test("EnergyMeterValidator", async () => {
 
   const result = await energyMeterValidator.validate({});
 
-  const EXPECTED_NUMBER_OF_ERRORS = 7;
+  const EXPECTED_NUMBER_OF_ERRORS = 8;
   assertEquals(result.passes, false);
   assertEquals(Object.keys(result.errors).length, EXPECTED_NUMBER_OF_ERRORS);
 });

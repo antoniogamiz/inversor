@@ -1,4 +1,5 @@
 export interface LoadRegulator {
+  id: bigint;
   brand: string;
   model: string;
   description: string;

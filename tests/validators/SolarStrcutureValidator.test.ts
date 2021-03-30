@@ -6,7 +6,7 @@ Deno.test("SolarStructureValidator", async () => {
 
   const result = await solarStructureValidator.validate({});
 
-  const EXPECTED_NUMBER_OF_ERRORS = 10;
+  const EXPECTED_NUMBER_OF_ERRORS = 11;
   assertEquals(result.passes, false);
   assertEquals(Object.keys(result.errors).length, EXPECTED_NUMBER_OF_ERRORS);
 });

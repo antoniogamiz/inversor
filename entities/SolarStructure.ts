@@ -1,4 +1,5 @@
 export interface SolarStructure {
+  id: bigint;
   brand: string;
   model: string;
   description: string;

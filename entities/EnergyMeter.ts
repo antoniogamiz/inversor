@@ -1,4 +1,5 @@
 export interface EnergyMeter {
+  id: bigint;
   brand: string;
   model: string;
   description: string;

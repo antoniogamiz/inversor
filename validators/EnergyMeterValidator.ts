@@ -2,6 +2,7 @@ import {
   validate,
   required,
   isNumber,
+  isInt,
   isString,
   numberBetween,
   lengthBetween,
@@ -13,6 +14,7 @@ import { IEnergyMeterValidator } from "interfaces/validators/mod.ts";
 export class EnergyMeterValidator implements IEnergyMeterValidator {
   async validate(entity: unknown) {
     const [passes, errors] = await validate(entity as InputData, {
+      id: [required, isInt],
       brand: [required, isString, lengthBetween(0, 20)],
       model: [required, isString, lengthBetween(0, 50)],
       description: [required, isString, lengthBetween(0, 500)],

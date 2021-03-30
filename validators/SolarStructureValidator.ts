@@ -15,6 +15,7 @@ import { ISolarStructureValidator } from "interfaces/validators/mod.ts";
 export class SolarStructureValidator implements ISolarStructureValidator {
   async validate(entity: unknown) {
     const [passes, errors] = await validate(entity as InputData, {
+      id: [required, isInt],
       brand: [required, isString, lengthBetween(0, 20)],
       model: [required, isString, lengthBetween(0, 50)],
       description: [required, isString, lengthBetween(0, 500)],

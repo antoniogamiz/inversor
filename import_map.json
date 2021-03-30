@@ -6,6 +6,8 @@
         "database/": "./database/",
         "repositories/": "./repositories/",
         "errors/": "./errors/",
+        "api/": "./api/",
+        "oak/": "https://deno.land/x/oak/",
         "testing/": "https://deno.land/std@0.91.0/testing/",
         "validasaur/": "https://deno.land/x/validasaur/",
         "denodb/": "https://raw.githubusercontent.com/takxlz/denodb/master/"

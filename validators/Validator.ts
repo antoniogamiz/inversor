@@ -3,8 +3,8 @@ import { validate, required, InputData, Rule } from "validasaur/mod.ts";
 export type Rules = Record<string, Rule[]>;
 
 export type ValidateOptions = {
-  withId: boolean;
-  partial: boolean;
+  withId?: boolean;
+  partial?: boolean;
 };
 
 export type ErrorDescriptor = {
@@ -32,6 +32,7 @@ export class Validator {
     if (!options.partial) rules = this._addRequiredRules(rules);
 
     if (!options.withId) rules.id = [];
+    if (options.withId) rules.id.push(required);
     return rules;
   }
 

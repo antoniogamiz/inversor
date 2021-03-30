@@ -4,15 +4,15 @@ allow:
 envFile:
   - .env
 imap: import_map.json
+unstable: true
 
 scripts:
   dev:
-    desc: Runs the server
     cmd: server.ts
     watch: true
-    unstable: true
+  test:
+    cmd: deno test
   prod:
     cmd: server.ts
-    unstable: true
     env:
       PORT: 80

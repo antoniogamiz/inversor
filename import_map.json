@@ -5,6 +5,7 @@
         "entities/": "./entities/",
         "database/": "./database/",
         "repositories/": "./repositories/",
+        "views/": "./views/",
         "errors/": "./errors/",
         "api/": "./api/",
         "oak/": "https://deno.land/x/oak/",

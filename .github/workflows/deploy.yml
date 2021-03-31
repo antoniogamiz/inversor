@@ -15,11 +15,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           username: ${{ secrets.SSH_USERNAME }}
           script: |
-            kill -9 `cat save_pid.txt`
-            rm -rf prod
-            mkdir -p prod
-            cd prod
-            git clone https://github.com/antoniogamiz/inversor.git .
-            nohup vr prod > ../my.log &
-            echo $! > ../save_pid.txt
-            echo "Deployment successful!"
+            bash deploy.sh

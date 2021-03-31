@@ -1,1 +1,1 @@
-export * from "./IEnergyMeterDataAccess.ts";
+export * from "./IInventoryDataAccess.ts";

@@ -5,9 +5,9 @@ import {
   numberBetween,
   lengthBetween,
 } from "validasaur/mod.ts";
-import { ILoadRegulatorValidator } from "interfaces/validators/mod.ts";
+import { Validator } from "validators/Validator.ts";
 
-export class LoadRegulatorValidator extends ILoadRegulatorValidator {
+export class LoadRegulatorValidator extends Validator {
   rules = {
     id: [isInt],
     brand: [isString, lengthBetween(0, 20)],

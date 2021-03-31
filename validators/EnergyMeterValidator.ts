@@ -6,8 +6,8 @@ import {
   lengthBetween,
 } from "validasaur/mod.ts";
 
-import { IEnergyMeterValidator } from "interfaces/validators/mod.ts";
-export class EnergyMeterValidator extends IEnergyMeterValidator {
+import { Validator } from "validators/Validator.ts";
+export class EnergyMeterValidator extends Validator {
   rules = {
     id: [isInt],
     brand: [isString, lengthBetween(0, 20)],

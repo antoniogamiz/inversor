@@ -6,9 +6,9 @@ import {
   lengthBetween,
 } from "validasaur/mod.ts";
 
-import { ISolarStructureValidator } from "interfaces/validators/mod.ts";
+import { Validator } from "validators/Validator.ts";
 
-export class SolarStructureValidator extends ISolarStructureValidator {
+export class SolarStructureValidator extends Validator {
   rules = {
     id: [isInt],
     brand: [isString, lengthBetween(0, 20)],

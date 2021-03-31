@@ -6,9 +6,9 @@ import {
   lengthBetween,
 } from "validasaur/mod.ts";
 
-import { IInversorValidator } from "interfaces/validators/mod.ts";
+import { Validator } from "validators/Validator.ts";
 
-export class InversorValidator extends IInversorValidator {
+export class InversorValidator extends Validator {
   rules = {
     id: [isInt],
     brand: [isString, lengthBetween(0, 20)],

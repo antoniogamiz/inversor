@@ -13,8 +13,4 @@ app.use(handleErrors);
 app.use(InventoryRouter.routes());
 app.use(InventoryRouter.allowedMethods());
 
-app.use((ctx) => {
-  ctx.response.body = "Hello World!";
-});
-
 await app.listen({ port: PORT });

@@ -20,7 +20,9 @@ export abstract class InventoryDataAccess<Entity>
   }
 
   async get(id: number) {
-    return ((await this.model.where("id", id).all())[0] as unknown) as Entity;
+    const result = await this.model.where("id", id).all();
+    if (result.length === 0) throw new Error("Element could not be found.");
+    return (result[0] as unknown) as Entity;
   }
 
   async getAll() {

@@ -8,7 +8,7 @@ import {
 
 import { Validator } from "validators/Validator.ts";
 
-export class InversorValidator extends Validator {
+export class InverterValidator extends Validator {
   rules = {
     id: [isInt],
     brand: [isString, lengthBetween(0, 20)],

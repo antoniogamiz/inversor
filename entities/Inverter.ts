@@ -1,4 +1,4 @@
-export interface Inversor {
+export interface Inverter {
   id: bigint;
   brand: string;
   model: string;

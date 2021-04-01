@@ -1,9 +1,10 @@
+import { Model } from "denodb/mod.ts";
+
 import { Validator } from "validators/Validator.ts";
-import { IInventoryDataAccess, PaginationOptions } from "interfaces/mod.ts";
+import { IInventoryDataAccess } from "interfaces/mod.ts";
+import { PaginationOptions } from "views/Paginator.ts";
 import { ValidationError } from "errors/mod.ts";
 import { Values } from "./mod.ts";
-
-import { Model } from "denodb/mod.ts";
 
 export abstract class InventoryDataAccess<Entity>
   implements IInventoryDataAccess<Entity> {
@@ -46,5 +47,10 @@ export abstract class InventoryDataAccess<Entity>
 
   async delete(id: number) {
     await this.model.deleteById(id);
+  }
+
+  async count() {
+    // weird workaround. See https://github.com/eveningkid/denodb/issues/215
+    return parseInt((((await this.model.count()) as unknown) as string) || "0");
   }
 }

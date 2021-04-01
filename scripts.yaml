@@ -17,3 +17,4 @@ scripts:
     cmd: server.ts
     env:
       PORT: 80
+      HOSTNAME: http://antoniogamiz.dev

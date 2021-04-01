@@ -3,7 +3,7 @@ import * as log from "https://deno.land/std@0.91.0/log/mod.ts";
 import { PostgresConnector, Database } from "denodb/mod.ts";
 
 import {
-  InversorModel,
+  InverterModel,
   EnergyMeterModel,
   LoadRegulatorModel,
   SolarModuleModel,
@@ -30,7 +30,7 @@ export const setupDataBase = async () => {
 const linkModels = (db: Database) => {
   db.link([
     EnergyMeterModel,
-    InversorModel,
+    InverterModel,
     EnergyMeterModel,
     LoadRegulatorModel,
     SolarModuleModel,

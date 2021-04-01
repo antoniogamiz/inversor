@@ -1,14 +1,14 @@
 import { Router, Context } from "oak/mod.ts";
 import {
   EnergyMeterValidator,
-  InversorValidator,
+  InverterValidator,
   LoadRegulatorValidator,
   SolarModuleValidator,
   SolarStructureValidator,
 } from "validators/mod.ts";
 import {
   EnergyMeterDataAccess,
-  InversorDataAccess,
+  InverterDataAccess,
   LoadRegulatorDataAccess,
   SolarModuleDataAccess,
   SolarStructureDataAccess,
@@ -16,7 +16,7 @@ import {
 import { InventoryView } from "views/mod.ts";
 import {
   EnergyMeter,
-  Inversor,
+  Inverter,
   LoadRegulator,
   SolarModule,
   SolarStructure,
@@ -36,13 +36,13 @@ const fillRouter = <Entity>(
 };
 
 const energyMeterValidator = new EnergyMeterValidator();
-const inversorValidator = new InversorValidator();
+const inverterValidator = new InverterValidator();
 const loadRegulatorValidator = new LoadRegulatorValidator();
 const solarModuleValidator = new SolarModuleValidator();
 const solarStructureValidator = new SolarStructureValidator();
 
 const energyMeterDataAccess = new EnergyMeterDataAccess(energyMeterValidator);
-const inversorDataAccess = new InversorDataAccess(inversorValidator);
+const inverterDataAccess = new InverterDataAccess(inverterValidator);
 const loadRegulatorDataAccess = new LoadRegulatorDataAccess(
   loadRegulatorValidator
 );
@@ -51,18 +51,29 @@ const solarStructureDataAccess = new SolarStructureDataAccess(
   solarStructureValidator
 );
 
-const energyMeterView = new InventoryView<EnergyMeter>(energyMeterDataAccess);
-const inversorView = new InventoryView<Inversor>(inversorDataAccess);
+const energyMeterView = new InventoryView<EnergyMeter>(
+  "energy-meters",
+  energyMeterDataAccess
+);
+const inverterView = new InventoryView<Inverter>(
+  "inverters",
+  inverterDataAccess
+);
 const loadRegulatorView = new InventoryView<LoadRegulator>(
+  "load-regulators",
   loadRegulatorDataAccess
 );
-const solarModuleView = new InventoryView<SolarModule>(solarModuleDataAccess);
+const solarModuleView = new InventoryView<SolarModule>(
+  "solar-modules",
+  solarModuleDataAccess
+);
 const solarStructureView = new InventoryView<SolarStructure>(
+  "solar-structures",
   solarStructureDataAccess
 );
 
 fillRouter<EnergyMeter>("energy-meters", InventoryRouter, energyMeterView);
-fillRouter<Inversor>("inversors", InventoryRouter, inversorView);
+fillRouter<Inverter>("inverters", InventoryRouter, inverterView);
 fillRouter<LoadRegulator>(
   "load-regulators",
   InventoryRouter,
@@ -70,7 +81,7 @@ fillRouter<LoadRegulator>(
 );
 fillRouter<SolarModule>("solar-modules", InventoryRouter, solarModuleView);
 fillRouter<SolarStructure>(
-  "solar-structure",
+  "solar-structures",
   InventoryRouter,
   solarStructureView
 );

@@ -1,6 +1,6 @@
 export * from "./EnergyMeterDataAccess.ts";
 export * from "./InventoryDataAccess.ts";
-export * from "./InversorDataAccess.ts";
+export * from "./InverterDataAccess.ts";
 export * from "./LoadRegulatorDataAccess.ts";
 export * from "./SolarModuleDataAccess.ts";
 export * from "./SolarStructureDataAccess.ts";

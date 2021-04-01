@@ -1,7 +1,7 @@
 import { Model, DataTypes } from "denodb/mod.ts";
 
-export class InversorModel extends Model {
-  static table = "inversor";
+export class InverterModel extends Model {
+  static table = "inverter";
 
   static fields = {
     id: { primaryKey: true, autoIncrement: true },

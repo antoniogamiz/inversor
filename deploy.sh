@@ -4,3 +4,4 @@ cp ../.env .env
 nohup vr prod > ../my.log &
 cat ../my.log
 echo "Deployment successful!"
+exit 0

@@ -41,6 +41,6 @@ export abstract class InventoryDataAccess<Entity>
   }
 
   async delete(id: number) {
-    await this.model.where("id", id).delete();
+    await this.model.deleteById(id);
   }
 }

@@ -1,5 +1,5 @@
 import { Validator } from "validators/Validator.ts";
-import { IInventoryDataAccess } from "interfaces/mod.ts";
+import { IInventoryDataAccess, PaginationOptions } from "interfaces/mod.ts";
 import { ValidationError } from "errors/mod.ts";
 import { Values } from "./mod.ts";
 
@@ -25,8 +25,12 @@ export abstract class InventoryDataAccess<Entity>
     return (result[0] as unknown) as Entity;
   }
 
-  async getAll() {
-    return ((await this.model.all()) as unknown) as Entity[];
+  async getAll(paginationOptions: PaginationOptions) {
+    const { offset, limit } = paginationOptions;
+    return ((await this.model
+      .offset(offset)
+      .limit(limit)
+      .get()) as unknown) as Entity[];
   }
 
   async update(values: Values) {

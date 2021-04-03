@@ -12,11 +12,11 @@ const InventoryInformationRouter = new Router();
 
 InventoryInformationRouter.get(`/inventory`, (ctx: Context) => {
   ctx.response.body = {
-    "energy-meter": EnergyMeterDescription,
-    inverter: InverterDescription,
-    "load-regulator": LoadRegulatorDescription,
-    "solar-module": SolarModuleDescription,
-    "solar-structure": SolarStructureDescription,
+    "energy-meters": EnergyMeterDescription,
+    inverters: InverterDescription,
+    "load-regulators": LoadRegulatorDescription,
+    "solar-modules": SolarModuleDescription,
+    "solar-structures": SolarStructureDescription,
   };
 });
 
